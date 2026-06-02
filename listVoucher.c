@@ -1,4 +1,6 @@
 #include "globalheader.h"
+#include <string.h>
+#include <stdlib.h>
 
 voucherPulsa* alokasiList(char *provider, char *kode, int nominal, int harga, int stock) {
     voucherPulsa *New = (voucherPulsa *)malloc(sizeof(voucherPulsa));
