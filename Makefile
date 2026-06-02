@@ -1,6 +1,5 @@
-DIR = Teori/Tubes
-# DIR = Praktikum/Pertemuan_8
-# DIR = Nyoba/monitoring
+# Lokasi Folder
+DIR = ../TubesStrukdat
 
 # For C-only project (Teori/Tubes is now C, not C++)
 SRC_C   = $(wildcard $(DIR)/*.c)
