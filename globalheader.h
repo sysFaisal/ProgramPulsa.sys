@@ -42,7 +42,6 @@ void cetakTabel(tabelLaporan T);
 
 
 
-
 /* ============ List Voucher ============ */
 typedef struct VoucherNode {
     char kodePulsa[50];
@@ -53,11 +52,13 @@ typedef struct VoucherNode {
     struct VoucherNode *next;
 } voucherPulsa;
 
+
 typedef struct {
     voucherPulsa *front;
     voucherPulsa *rear;
     int counter;
 } linkList;
+
 
 linkList createList(void);
 int isEmptyList(linkList L);
@@ -68,9 +69,6 @@ void addLastList(linkList *L, char *provider, char *kode, int nominal, int harga
 voucherPulsa* cariVoucher(linkList *L, char *kode);
 int kurangiStock(linkList *L, char *kode, int minstock, int *actualSell, int *harga);
 void cetaklinkList(linkList L);
-
-
-
 
 
 
@@ -92,9 +90,12 @@ typedef struct {
 
 Costumer createQueue(void);
 int isEmptyQueue(Costumer L);
+int isFullQueue(Costumer L);
 void enqueue(Costumer *L, char *nama, char *noHp, char *kodePulsa, char *Tanggal, int jumlah);
 int dequeue(Costumer *L, char *nama, char *noHp, char *kodePulsa, int *jumlah);
+int batalAntrian(Costumer *L, char *nama, char *noHp);
 void cetakCostumer(Costumer L);
+
 
 /* ============ Stack History ============ */
 typedef struct StackNode {
@@ -109,6 +110,7 @@ typedef struct StackNode {
     struct StackNode *next;
 } stackHistory;
 
+
 typedef struct {
     stackHistory *first;
     int counter;
@@ -120,5 +122,6 @@ int pushHistory(History *L, char *idTransaksi, char *namaPembeli, char *noHp, ch
                char *tanggal, int jumlah, long long int totalHarga, char *status);
 void pop(History *L);
 void cetakHistory(History L);
+
 
 #endif
