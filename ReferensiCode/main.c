@@ -221,6 +221,7 @@ int main() {
         printf("8. Lihat Laporan\n");
         printf("0. Keluar\n");
         printf("Pilihan : ");
+        fgets(input, sizeof(input), stdin);
         input[strcspn(input, "\n")] = '\0';
         
         if (!isDigit(input, 0)) {
