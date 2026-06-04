@@ -9,14 +9,24 @@ void tambahVoucher(linkList *D) {
     
     printf("\n== tambahVoucher ==\n");
     while (1) {
+        printf("Provider : ");
+        fgets(provider, sizeof(provider), stdin);
         provider[strcspn(provider, "\n")] = '\0';
         
+        printf("Nominal : ");
+        fgets(nominal, sizeof(nominal), stdin);
         nominal[strcspn(nominal, "\n")] = '\0';
         
+        printf("Harga : ");
+        fgets(harga, sizeof(harga), stdin);
         harga[strcspn(harga, "\n")] = '\0';
         
+        printf("Stock : ");
+        fgets(stock, sizeof(stock), stdin);
         stock[strcspn(stock, "\n")] = '\0';
         
+        printf("Kode Pulsa : ");
+        fgets(kode, sizeof(kode), stdin);
         kode[strcspn(kode, "\n")] = '\0';
         
         if (!(isDigit(nominal, 1) && isDigit(harga, 1) && isDigit(stock, 1))) {
@@ -62,8 +72,12 @@ void enqueueCos(Costumer *C, linkList *D) {
         fgets(noHP, sizeof(noHP), stdin);
         noHP[strcspn(noHP, "\n")] = '\0';
         
+        printf("Kode Pulsa : ");
+        fgets(kodePulsa, sizeof(kodePulsa), stdin);
         kodePulsa[strcspn(kodePulsa, "\n")] = '\0';
         
+        printf("Jumlah : ");
+        fgets(jumlah, sizeof(jumlah), stdin);
         jumlah[strcspn(jumlah, "\n")] = '\0';
         
         if (!cariKodePulsa(*D, kodePulsa)) {
@@ -172,6 +186,8 @@ void editStock(linkList *D) {
     
     char kodePulsa[50], stock[20];
     printf("== editStock Voucher ==\n");
+    printf("Kode Pulsa : ");
+    fgets(kodePulsa, sizeof(kodePulsa), stdin);
     kodePulsa[strcspn(kodePulsa, "\n")] = '\0';
     
     voucherPulsa *Temp = cariVoucher(D, kodePulsa);
@@ -183,6 +199,8 @@ void editStock(linkList *D) {
         return;
     }
     
+    printf("Stock Baru : ");
+    fgets(stock, sizeof(stock), stdin);
     stock[strcspn(stock, "\n")] = '\0';
     
     if (!isDigit(stock, 1)) {
