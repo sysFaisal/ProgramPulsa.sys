@@ -1,0 +1,43 @@
+# Project: ProgramPulsa
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Code/externalUtils.o Code/listVoucher.o Code/main.o Code/queueCostumer.o Code/stackHistory.o Code/tabelLaporan.o
+LINKOBJ  = Code/externalUtils.o Code/listVoucher.o Code/main.o Code/queueCostumer.o Code/stackHistory.o Code/tabelLaporan.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = ProgramPulsa.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Code/externalUtils.o: Code/externalUtils.c
+	$(CC) -c Code/externalUtils.c -o Code/externalUtils.o $(CFLAGS)
+
+Code/listVoucher.o: Code/listVoucher.c
+	$(CC) -c Code/listVoucher.c -o Code/listVoucher.o $(CFLAGS)
+
+Code/main.o: Code/main.c
+	$(CC) -c Code/main.c -o Code/main.o $(CFLAGS)
+
+Code/queueCostumer.o: Code/queueCostumer.c
+	$(CC) -c Code/queueCostumer.c -o Code/queueCostumer.o $(CFLAGS)
+
+Code/stackHistory.o: Code/stackHistory.c
+	$(CC) -c Code/stackHistory.c -o Code/stackHistory.o $(CFLAGS)
+
+Code/tabelLaporan.o: Code/tabelLaporan.c
+	$(CC) -c Code/tabelLaporan.c -o Code/tabelLaporan.o $(CFLAGS)

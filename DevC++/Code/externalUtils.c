@@ -34,7 +34,8 @@ int isDigit(char *text, int cekPanjang) {
         return 0;
     }
     
-    for (int i = 0; i < (int)strlen(text); i++) {
+    int i;
+    for (i = 0; i < (int)strlen(text); i++) {
         if (!(text[i] >= '0' && text[i] <= '9')) {
             return 0;
         }
