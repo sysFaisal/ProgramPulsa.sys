@@ -1,5 +1,12 @@
 #include "globalheader.h"
 
+void pauseProgram(){
+    char temp[10];
+
+    printf("Tekan Enter untuk lanjut...");
+    fgets(temp, sizeof(temp), stdin);
+};
+
 char* saferString(char *text, int maxlength) {
     static char result[MAX_STRING];
     strcpy(result, text);
@@ -35,7 +42,7 @@ int isDigit(char *text, int cekPanjang) {
     return 1;
 }
 
-char* generateID(void) {
+char* generateID() {
     static char id[20];
     srand(time(0));
     int number = rand() % 900000 + 100000;
@@ -43,7 +50,7 @@ char* generateID(void) {
     return id;
 }
 
-char* getHours(void) {
+char* getHours() {
     static char jam[20];
     time_t now = time(0);
     struct tm *ltm = localtime(&now);
@@ -52,7 +59,7 @@ char* getHours(void) {
     return jam;
 }
 
-char* getTanggal(void) {
+char* getTanggal() {
     static char tanggal[50];
     time_t now = time(0);
     struct tm *ltm = localtime(&now);

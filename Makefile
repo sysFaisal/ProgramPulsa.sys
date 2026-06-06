@@ -1,5 +1,5 @@
 # Lokasi Folder
-DIR = ../ProgramPulsa.sys/ReferensiCode
+DIR = .
 
 # For C-only project (Teori/Tubes is now C, not C++)
 SRC_C   = $(wildcard $(DIR)/*.c)

@@ -13,9 +13,10 @@
 char* saferString(char *text, int maxlength);
 void printColumn(char *text, int maxlength);
 int isDigit(char *text, int cekPanjang);
-char* generateID(void);
-char* getHours(void);
-char* getTanggal(void);
+char* generateID();
+char* getHours();
+char* getTanggal();
+void pauseProgram();
 
 /* ============ Tabel Laporan ============ */
 #define nmax 100
