@@ -75,47 +75,6 @@ int dequeue(Costumer *L, char *nama, char *noHp, char *kodePulsa, int *jumlah) {
     return 1;
 }
 
-/* ini buat batalin antrian berdasarkan nama & noHP
- * Bisa hapus di posisi (depan, tengah, belakang)
- * Return: 1 jika berhasil, 0 jika tidak ditemukan */
-int batalAntrian(Costumer *L, char *nama, char *noHp) {
-    if (isEmptyQueue(*L)) {
-        printf("Antrian kosong, tidak ada yang dibatalkan.\n");
-        return 0;
-    }
-
-    QueueCos *cari = L->front;
-    QueueCos *prev = NULL;
-
-    while (cari != NULL) {
-        if (strcmp(cari->nama, nama) == 0 && strcmp(cari->noHP, noHp) == 0) {
-
-            if (prev == NULL) {
-                /* Node di depan (front) */
-                L->front = cari->next;
-                if (L->front == NULL) L->rear = NULL;
-            } else if (cari->next == NULL) {
-                /* Node di belakang (rear) */
-                prev->next = NULL;
-                L->rear = prev;
-            } else {
-                /* Node di tengah */
-                prev->next = cari->next;
-            }
-
-            L->counter = L->counter - 1;
-            free(cari);
-            printf("Antrian atas nama %s berhasil dibatalkan.\n", nama);
-            return 1;
-        }
-
-        prev = cari;
-        cari = cari->next;
-    }
-
-    printf("Customer '%s' dengan No HP '%s' tidak ditemukan.\n", nama, noHp);
-    return 0;
-}
 
 void cetakCostumer(Costumer L) {
     if (isEmptyQueue(L)) {

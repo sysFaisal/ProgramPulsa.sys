@@ -93,12 +93,25 @@ int kurangiStock(linkList *L, char *kode, int minstock, int *actualSell, int *ha
     
     voucherPulsa *Temp = cariVoucher(L, kode);
     if (Temp != NULL) {
+
+        // ini function dimana pembeli beli voucher lebih banyak dari pada stock maka
+        // maka pembelian gagal 
+        if (Temp->stock < minstock) {
+            *actualSell = 0;
+            *harga = Temp->harga;
+            return 1;
+        }
+
+        /*
+        Ini Function sebelumnya dimana ketika pembeli beli voucher lebih banyak daripada stock
+        dimana pembelian berhasil sebesar stock dimiliki
         if (Temp->stock < minstock) {
             *actualSell = Temp->stock;
             *harga = Temp->harga;
             Temp->stock = 0;
             return 1;
         }
+        */
         
         Temp->stock = Temp->stock - minstock;
         *harga = Temp->harga;

@@ -94,7 +94,6 @@ int isEmptyQueue(Costumer L);
 int isFullQueue(Costumer L);
 void enqueue(Costumer *L, char *nama, char *noHp, char *kodePulsa, char *Tanggal, int jumlah);
 int dequeue(Costumer *L, char *nama, char *noHp, char *kodePulsa, int *jumlah);
-int batalAntrian(Costumer *L, char *nama, char *noHp);
 void cetakCostumer(Costumer L);
 
 
